@@ -1,5 +1,5 @@
 {
-  "name": "express",
+  "name": "express1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/iskotar/express/issues"
   },
-  "homepage": "https://github.com/iskotar/express#readme"
+  "homepage": "https://github.com/iskotar/express#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
