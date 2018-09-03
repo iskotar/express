@@ -23,9 +23,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-let todoList = [
-  {title: 'First'},
-]
+let todoList = [];
 
 app.get('/', (req, res)=>{
   res.status(200).json(todoList);
@@ -46,6 +44,16 @@ app.delete('/', (req, res)=>{
 
   setTimeout(()=>{
     res.status(200).json({message: 'deleted'});
+  },200)
+});
+
+app.patch('/', (req, res)=>{
+  const title = req.body.title;
+
+  todoList = todoList.filter(el => el.title !== title);
+
+  setTimeout(()=>{
+    res.status(200).json({message: 'success'});
   },200)
 });
 
