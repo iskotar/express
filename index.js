@@ -48,13 +48,8 @@ app.delete('/', (req, res)=>{
 });
 
 app.patch('/', (req, res)=>{
-  const title = req.body.title;
-
-  todoList = todoList.filter(el => el.title !== title);
-
-  setTimeout(()=>{
-    res.status(200).json({message: 'success'});
-  },200)
+  let index = todoList.indexOf(todoList.find(e => e.title === req.body.data.title));
+  todoList[index] = req.body.data;
 });
 
 app.listen(5000, ()=> console.log('LISTEN 5000'));
